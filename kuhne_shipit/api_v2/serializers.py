@@ -58,13 +58,11 @@ class CreateShipmentSerializer(serializers.ModelSerializer):
         return obj.get_api_url(request=request)
 
     def validate_status(self, value):
-        print(value)
         if not value:
             raise serializers.ValidationError("Status is not added")
         return value
 
     def validate_product(self, value):
-        print(value)
         if not value:
             raise serializers.ValidationError("Product is not Supplied")
         return value
