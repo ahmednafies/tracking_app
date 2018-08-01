@@ -27,7 +27,7 @@ class Shipment(models.Model):
     tracking_no = models.CharField(max_length=128, unique=True)
     sender = models.ForeignKey('shipments.Company', on_delete=models.PROTECT)
     receiver = models.ForeignKey('shipments.Company', on_delete=models.PROTECT, related_name='shipments')
-    product = models.CharField('Product', max_length=128, default=None)
+    product = models.CharField('Product', max_length=128, blank=True, null=True)
     shipping_date = models.DateField('shipping date', blank=True, null=True)
     delivery_date = models.DateField('Expected delivery date', blank=True, null=True)
     status = models.CharField(max_length=20, choices=DELIVERY_STATUS, blank=True, null=True)
