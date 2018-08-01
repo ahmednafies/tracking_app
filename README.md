@@ -80,3 +80,12 @@ but I wanted to use something Which I have never used before. (this is why I hav
 - I wanted to integrate Vue.js to impress you guys but I ran out of time.
 - Thank you for this task, I really enjoyed it and I think I will create more django rest api using this framework.
  
+
+## Weaknesses
+- While cleaning and commenting I managed to mess up the git version since I was using pycharm history interchangebly (first time this happens to me)
+- so you cannot really see howevery this is developed in verions - but anyways I used [Git feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+- not enough validations, I did not create validations for on database levels, I wanted to show I can do validation in djangorestframework serializers
+- Test does not include all Shipments and others types of authentications like basic authentication - (tested it manually using CURL)
+
+
+
