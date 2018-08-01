@@ -45,29 +45,51 @@ class CreateShipmentSerializer(serializers.ModelSerializer):
             'sender',
             'receiver',
             'product',
-            'delivery_date',
             'shipping_date',
+            'delivery_date',
             'status'
         )
 
         read_only_fields = ["id"]
+        required_fields = '__all__'
 
     def get_url(self, obj):
         request = self.context.get("request")
         return obj.get_api_url(request=request)
 
-    def get_shipping_address(self):
+    def validate_status(self, value):
+        print(value)
+        if not value:
+            raise serializers.ValidationError("Status is not added")
+        return value
+
+    def validate_product(self, value):
+        print(value)
+        if not value:
+            raise serializers.ValidationError("Product is not Supplied")
+        return value
+
+    def validate_shipping_date(self, value):
+        if not value:
+            raise serializers.ValidationError("Shipping Date is not Supplied")
+        return value
+
+    def get_shipping_date(self):
         request = self.context.get("request")
         date_string = request.data["shipping_date"]
-        datetime_object = datetime.strptime(date_string, '%Y-%m-%d')
-        return datetime_object.date()
+        try:
+            datetime_object = datetime.strptime(date_string, '%Y-%m-%d')
+        except ValueError:
+            raise serializers.ValidationError("Shipping Date is not Supplied")
+        else:
+            return datetime_object.date()
 
     def get_sender(self):
         request = self.context.get("request")
         return int(request.data["sender"])
 
     def validate_delivery_date(self, value):
-        shipping_date = self.get_shipping_address()
+        shipping_date = self.get_shipping_date()
         if value <= shipping_date:
             raise serializers.ValidationError("Delivery Date must be after Shipping Date")
         return value
