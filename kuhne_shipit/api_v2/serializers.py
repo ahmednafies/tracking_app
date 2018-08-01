@@ -98,6 +98,7 @@ class CreateShipmentSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Sender and Receiver cannot be the same")
         return value
 
+
 class ShipmentSerializer(serializers.ModelSerializer):
     """
     Serializer Class to retrieve, Update or Destroy Shipments

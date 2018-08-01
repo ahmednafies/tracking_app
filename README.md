@@ -72,7 +72,7 @@ The application should be visible at `127.0.0.1:8000`
 - Created another API (just because I was enjoying it) at "/api/v2"
 - Dashboard is created to view current Shipments statuses at "/dashboard" as well status and delivery time can be updated
 - Assignment page is generated from this README.md
-- Admin interface is created to manipulate data easily with proper filters (as well to show that I can learn more about Django)
+- Admin interface is created to manipulate data easily with proper filters (as well to show that I can learn more about Django) at "/admin"
 - I used "ViewSets" and "Routers" to show that I am doing stuff the Django Way, The Flask way (e.g Flask_restplus)
 would be usual function based views or class based views perhaps using mixins as well.
 but I wanted to use something Which I have never used before. (this is why I have api/v1 and api/v2)
