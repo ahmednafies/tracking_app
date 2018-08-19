@@ -20,7 +20,6 @@ function firstTime {
 	
 	echo "run tests"
 	python manage.py test
-
 	echo "run server"
 	python manage.py runserver
 }
