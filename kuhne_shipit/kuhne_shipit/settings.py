@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'shipments',
     'rest_framework',
-
+    'corsheaders',
     'crispy_forms',
 
     'django.contrib.admin',
@@ -52,6 +52,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'kuhne_shipit.urls'
@@ -150,3 +153,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+)
