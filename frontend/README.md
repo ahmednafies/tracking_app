@@ -1,6 +1,6 @@
 # frontend
 
-> A Vue.js project
+> kuhne shipit frontend
 
 ## Build Setup
 
