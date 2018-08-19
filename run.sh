@@ -36,7 +36,7 @@ function normalRun {
 }
 
 while true; do
-	read -p "Is it your first time to run the app?" yn
+	read -p "Is it your first time to run the app? " yn
 	case $yn in
 		[Yy]* ) firstTime ; break;;
 		[Nn]* ) normalRun ; break;;
