@@ -62,7 +62,7 @@ class ShipmentSerializer(serializers.ModelSerializer):
             """
             Method Checks if sender and receiver are equal,
             Raises a ValueError if True
-            :param value:
+            :param value: sender
             :return:
             """
             if value == self.instance.receiver:
