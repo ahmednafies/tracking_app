@@ -6,12 +6,10 @@ Shipit is a simplified tool for Shipment simple tracking. Where Companies can ch
 This tool is for tracking shipments between companies.
 
 ## Tasks
-- Please create REST API functionality to maintain a list of shipments (fields are freetext fields, up to your choice).
+- Create REST API functionality to maintain a list of shipments.
 - Required functionality: list, retrieve, create, update.
 - Python language with utilization of Django REST framework.
-- No forms should be used
-- Include tests (pytest, or phpunit, or etc).
-- Code must be provided in a zip file.
+- Include tests.
 
 ### Setup
 
@@ -77,8 +75,7 @@ The application should be visible at `127.0.0.1:8000`
 would be usual function based views or class based views perhaps using mixins as well.
 but I wanted to use something Which I have never used before. (this is why I have api/v1 and api/v2)
 - I created tests to cover mostly for authenticaion and CRUD for companies, I skipped creating the same tests for Shipments
-- I wanted to integrate Vue.js to impress you guys but I ran out of time.
-- Thank you for this task, I really enjoyed it and I think I will create more django rest api using this framework.
+- Vue.js is utilized as a frontend framework for show purposes.
  
 
 ## Weaknesses
