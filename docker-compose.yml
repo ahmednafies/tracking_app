@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:11
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: bash -c "
+      python /code/manage.py migrate --noinput &&
+      python /code/manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+      - "3000:3000" # used for debugging
+    depends_on:
+      - db
