@@ -9,7 +9,7 @@ This tool is for tracking shipments between companies.
 
 Use `Python 3` for back-end
 
-All the requirements have been described in `requirements.txt`. Make sure you add all your back-end requirements there as well!
+All the requirements have been described in `Pipfile`. Make sure you add all your back-end requirements there as well!
 Initial requirements include:
 
 - [Django](https://docs.djangoproject.com/en/1.11/) as the base framework
@@ -19,28 +19,23 @@ Initial requirements include:
 - [django-filter](https://pypi.org/project/django-filter/) dynamic queryset filtering from URL parameters.
 - [markdown](http://pythonhosted.org/Markdown/siteindex.html) for rendering markdown in HTML
 
-
-The application uses SQLite for the database by default for simplicity reasons.
-
-Migrate the database before the first run
-
-    python manage.py migrate
+The application uses Postgres db
 
 Create a superuser
 
-    python manage.py createsuperuser
+    docker-compose run web python manage.py createsuperuser
 
 Loading initial data for projects
 
-    python manage.py loaddata shipments/fixtures/initial.json
+    docker-compose run web python manage.py loaddata shipments/fixtures/initial.json
  
- Running tests
+Running tests
     
-    python manage.py test
+    ocker-compose run web python manage.py test
 
 ### Running the application
 
-    python manage.py runserver
+    docker-compose up
 
 The application should be visible at `127.0.0.1:8000` 
 
