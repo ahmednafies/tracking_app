@@ -39,7 +39,7 @@ Loading initial data for projects
  
 Running tests
     
-    ocker-compose run web python manage.py test
+    docker-compose run web python manage.py test
 
 ### Running the application
 
