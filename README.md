@@ -4,11 +4,16 @@
 
 Shipit is a simplified tool for Shipment simple tracking. 
 
-Where Companies can check the status of their shipments.
+Where companies can check the status of their shipments.
 
 This tool is for tracking shipments between companies.
 
 ### Setup
+add `.env` in the root directory
+depending on your environment, choose one of `DEV`, `STAGING` or `PROD`
+
+    ENV=DEV
+    SECRET_KEY=your-secret-key
 
 Use `Python 3` for back-end
 
