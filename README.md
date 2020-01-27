@@ -37,7 +37,7 @@ Running tests
 
     docker-compose up
 
-The application should be visible at `127.0.0.1:8000` 
+The application should be visible at `localhost:8000` 
 
 ## Api Endpoints
     v1 - created with ViewSets and Routers
