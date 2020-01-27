@@ -6,7 +6,6 @@ import os
 
 import dj_database_url
 from dotenv import load_dotenv
-from corsheaders.defaults import default_headers
 
 
 class Config:

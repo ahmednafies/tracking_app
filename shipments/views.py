@@ -15,36 +15,34 @@ from shipments.models import Shipment
 
 
 class AssignmentView(TemplateView):
-    template_name = 'shipments/assignment.html'
+    template_name = "shipments/assignment.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        with open(os.path.join(os.path.dirname(settings.BASE_DIR), 'README.md'), encoding='utf-8') as f:
+        with open(os.path.join(settings.BASE_DIR, "README.md"), encoding="utf-8") as f:
             assignment_content = f.read()
 
-        context.update({
-            'assignment_content': mark_safe(markdown(assignment_content))
-        })
+        context.update({"assignment_content": mark_safe(markdown(assignment_content))})
 
         return context
 
 
 class DashboardView(LoginRequiredMixin, ListView):
     model = Shipment
-    ordering = ('shipping_date',)
-    context_object_name = 'shipments'
-    template_name = 'shipments/dashboard.html'
+    ordering = ("shipping_date",)
+    context_object_name = "shipments"
+    template_name = "shipments/dashboard.html"
 
     def get_queryset(self):
         shipments = super().get_queryset()
-        shipments = shipments.select_related('sender', 'receiver')
+        shipments = shipments.select_related("sender", "receiver")
 
         return shipments
 
 
 class ShipmentUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'shipments/shipment_form.html'
+    template_name = "shipments/shipment_form.html"
     model = Shipment
     form_class = ShipmentForm
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy("dashboard")

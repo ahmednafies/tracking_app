@@ -29,7 +29,8 @@ ALLOWED_HOSTS = CONFIG.ALLOWED_HOSTS
 INSTALLED_APPS = [
     "shipments",
     "rest_framework",
-    "crispy_forms" "django.contrib.admin",
+    "crispy_forms",
+    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
