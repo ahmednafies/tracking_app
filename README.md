@@ -2,7 +2,10 @@
 
 ## Project overview
 
-Shipit is a simplified tool for Shipment simple tracking. Where Companies can check the status of their shipments
+Shipit is a simplified tool for Shipment simple tracking. 
+
+Where Companies can check the status of their shipments.
+
 This tool is for tracking shipments between companies.
 
 ### Setup
